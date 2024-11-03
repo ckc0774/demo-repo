@@ -1,10 +1,13 @@
-def find_max_idx(a):
-    n = len(a)
-    max_idx = 0
-    for i in range(1,n):
-        if a[i] > a[max_idx]:
-            max_idx=i
-    return max_idx
+def find_same_name(a):
+    n=len(a)
+    result = set()
+    for i in range(0,n-1):
+        for j in range(i+1,n):
+            if a[i] == a[j]:
+                result.add(a[i])
+    return result
 
-v=[17,9,18,33,58,7,33,42]
-print(find_max_idx(v))
+name = ["tom","jerry","mike","tom"]
+print(find_same_name(name))
+name2 = ["tom","jerry","mike","tom","mike"]
+print(find_same_name(name2))
